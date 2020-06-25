@@ -1,6 +1,6 @@
 <?php
 
-const BASE_URL = '/Lavrik/lesson4/';
+const BASE_URL = '/';
 
 include_once ('core/arr.php');
 include_once ('core/db.php');

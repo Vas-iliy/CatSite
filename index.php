@@ -1,4 +1,5 @@
 <?php
+//var_dump(password_hash('123', PASSWORD_BCRYPT));
 
 include_once ('init.php');
 
