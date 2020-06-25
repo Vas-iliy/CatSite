@@ -1,4 +1,5 @@
 
+<div class="d-flex">
 <div class="btn-group mt-3">
 	<button type="button"  class="btn btn-outline-primary dropdown-toggle " data-toggle="dropdown"
 	        style = "width : 250px" aria-haspopup="true" aria-expanded="false">
@@ -21,6 +22,7 @@
 		</li>
 
 	</form>
+</div>
 </div>
 
 <div class="content">

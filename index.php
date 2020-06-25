@@ -11,6 +11,7 @@ $patch = "controllers/$cname.php";
 $pageTitle = 'Ошибка 404';
 $pageContent = '';
 $sidebar = '';
+$header = '';
 
 if (checkControllerName($cname) && file_exists($patch)) {
 	include_once ($patch);
@@ -22,6 +23,7 @@ if (checkControllerName($cname) && file_exists($patch)) {
 $html = template('bace/v_main', [
 	'title' => $pageTitle,
 	'content' => $pageContent,
+	'header' => $header
 ]);
 
 
