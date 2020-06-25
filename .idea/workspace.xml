@@ -2,8 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f54b044-ae65-442b-960b-94ec2e0f6199" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/controllers/login.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/registrations.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jsLibraryMappings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/assets/css/main.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/CatSite.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/CatSite.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/states.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/states.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/db.php" beforeDir="false" afterPath="$PROJECT_DIR$/core/db.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/init.php" beforeDir="false" afterPath="$PROJECT_DIR$/init.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/m_states.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/m_states.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bace/v_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bace/v_main2c.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main2c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/v_states.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/v_states.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,6 +54,13 @@
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="catsite: schema" type="76f4a085:MysqlImplModel$Schema" />
       </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="catsite: schema" type="76f4a085:MysqlImplModel$Schema" />
+        <item name="states: table" type="285a2a93:MysqlImplModel$Table" />
+      </path>
     </expand>
     <select />
   </component>
@@ -57,7 +75,7 @@
     <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/controllers" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -67,11 +85,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\server\OpenServer\domains\CatSite" />
       <recent name="D:\server\OpenServer\domains\CatSite\controllers" />
       <recent name="D:\server\OpenServer\domains\CatSite\models" />
       <recent name="D:\server\OpenServer\domains\CatSite\core" />
       <recent name="D:\server\OpenServer\domains\CatSite\views\bace" />
-      <recent name="D:\server\OpenServer\domains\CatSite" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -96,7 +114,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593069787052</updated>
-      <workItem from="1593069788217" duration="4321000" />
+      <workItem from="1593069788217" duration="7224000" />
     </task>
     <servers />
   </component>

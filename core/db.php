@@ -3,7 +3,7 @@
 function dbConnect () {
     static $connection;
     if ($connection === null) {
-         $connection = new PDO('mysql:host=localhost; dbname=lesson4; charset=UTF8', 'root', 'root',
+         $connection = new PDO('mysql:host=localhost; dbname=catsite; charset=UTF8', 'root', 'root',
          [PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC]);
     }
     return $connection;

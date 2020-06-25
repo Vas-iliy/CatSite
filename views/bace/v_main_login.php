@@ -11,3 +11,7 @@
 	<div class="dropdown-divider"></div>
 	<form method="post"><input class="dropdown-item" type="submit" name="exit" value="Выйти"></form>
 </div>
+
+<div class="content">
+   <?=$content?>
+</div>

@@ -22,3 +22,7 @@
 
 	</form>
 </div>
+
+<div class="content">
+	<?=$content?>
+</div>
