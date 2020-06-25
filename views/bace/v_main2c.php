@@ -1,10 +1,10 @@
 
-    <div class="row" >
-        <aside class="col col-3 col-md-3">
+    <div class="" >
+        <aside class="">
 			<?=$left?>
         </aside>
 
-        <main class="col col-9 col-md-9">
+        <main class="">
 			<?=$content?>
         </main>
     </div>

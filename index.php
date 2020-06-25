@@ -3,7 +3,7 @@
 
 include_once ('init.php');
 
-$user = authGetUser();
+$userLoadingYes = authGetUser();
 
 define('URL_PARAMS', parsUrl($_GET['querysystemurl'] ?? ''));
 

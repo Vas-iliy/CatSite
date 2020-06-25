@@ -1,8 +1,8 @@
 <?php
 
-function userAdd ($params) {
-    $sql = "INSERT INTO login (login, password, email, country, auth_key) 
-        VALUES (:login, :password, :email, :country, :auth)";
+function userInsert ($params) {
+    $sql = "INSERT INTO registrations (login, password, email, authKey) 
+        VALUES (:login, :password, :email, :auth)";
     dbQuery($sql, $params);
 
     return true;
@@ -18,16 +18,16 @@ function authKeyFunction () {
     return $arr;
 }
 
-function findUser ($email) {
-    $sql = "SELECT validation FROM login WHERE email = :email";
+function userSelect ($email) {
+    $sql = "SELECT validations FROM registrations WHERE email = :email";
     $data = dbQuery($sql, ['email' => $email]);
     $data = $data->fetch();
 
     return $data;
 }
 
-function updateUser ($auth) {
-    $sql = "UPDATE login SET validation = 1, new_time=current_timestamp WHERE auth_key = :auth";
+function userUpdate ($auth) {
+    $sql = "UPDATE registrations SET validations = 1, dtNew=current_timestamp WHERE authKey = :auth";
     dbQuery($sql, ['auth' => $auth]);
 
     return true;

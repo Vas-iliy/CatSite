@@ -18,7 +18,7 @@
 		<input type="submit" class="btn btn-outline-success mt-1 " style="width: 200px" name="submit" value="Войти">
 
 		<li class="nav-item">
-			<a class="nav-link" href="registration.php">Зарегистрироваться</a>
+			<a class="nav-link" href="<?=BASE_URL?>registrations">Зарегистрироваться</a>
 		</li>
 
 	</form>
