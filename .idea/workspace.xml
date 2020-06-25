@@ -2,17 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f54b044-ae65-442b-960b-94ec2e0f6199" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.htaccess" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/controllers/states.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/views/bace/v_main2c.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/controllers/stateLog.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/c_states.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/errors/v_404.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/bace/main.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/bace/main_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/bace/main_no_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main_no_login.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/states.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/v_states.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -25,6 +19,36 @@
       <executable />
     </execution>
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+      </path>
+      <path>
+        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
+        <item name="@localhost" type="feb32156:DbDataSourceImpl" />
+        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
+        <item name="catsite: schema" type="76f4a085:MysqlImplModel$Schema" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -33,9 +57,10 @@
     <ConfirmationsSetting value="2" id="Add" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DatabaseDriversLRU" value="mysql" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/views/bace" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/models" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -72,7 +97,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593069787052</updated>
-      <workItem from="1593069788217" duration="2085000" />
+      <workItem from="1593069788217" duration="4078000" />
     </task>
     <servers />
   </component>

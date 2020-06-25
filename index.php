@@ -8,6 +8,7 @@ $cname = URL_PARAMS[0] ?? 'states';
 $patch = "controllers/$cname.php";
 $pageTitle = 'Ошибка 404';
 $pageContent = '';
+$sidebar = '';
 
 if (checkControllerName($cname) && file_exists($patch)) {
 	include_once ($patch);
@@ -15,9 +16,18 @@ if (checkControllerName($cname) && file_exists($patch)) {
 	$pageContent = template('errors/v_404');
 }
 
-$html = template('standart/v_main', [
-	'title' => $pageTitle,
-	'content' => $pageContent
-]);
+if (URL_PARAMS[0] == 'states' or 'stateLog') {
+	$html = template('bace/v_main2c', [
+		'title' => $pageTitle,
+		'content' => $pageContent,
+		'left' => $sidebar
+	]);
+} else {
+	$html = template('bace/v_main', [
+		'title' => $pageTitle,
+		'content' => $pageContent,
+	]);
+}
+
 
 echo $html;
