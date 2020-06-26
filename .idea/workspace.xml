@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="1f54b044-ae65-442b-960b-94ec2e0f6199" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/views/v_registrations.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/controllers/registrations.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/registrations.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/login.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/stateLog.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/stateLog.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/controllers/states.php" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/states.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/m_registrations.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/m_registrations.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/views/bace/v_main2c.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main2c.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/m_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/models/m_login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/views/bace/v_main.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/views/bace/v_main_no_login.php" beforeDir="false" afterPath="$PROJECT_DIR$/views/bace/v_main_no_login.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -53,7 +54,7 @@
         <item name="@localhost" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="catsite: schema" type="76f4a085:MysqlImplModel$Schema" />
-        <item name="registrations: table" type="285a2a93:MysqlImplModel$Table" />
+        <item name="sessions: table" type="285a2a93:MysqlImplModel$Table" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
@@ -87,10 +88,10 @@
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\server\OpenServer\domains\CatSite\views" />
+      <recent name="D:\server\OpenServer\domains\CatSite\views\errors" />
       <recent name="D:\server\OpenServer\domains\CatSite" />
       <recent name="D:\server\OpenServer\domains\CatSite\controllers" />
       <recent name="D:\server\OpenServer\domains\CatSite\models" />
-      <recent name="D:\server\OpenServer\domains\CatSite\core" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -115,7 +116,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1593069787052</updated>
-      <workItem from="1593069788217" duration="13338000" />
+      <workItem from="1593069788217" duration="15375000" />
     </task>
     <servers />
   </component>

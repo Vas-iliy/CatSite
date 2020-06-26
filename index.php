@@ -1,6 +1,8 @@
 <?php
 //var_dump(password_hash('123', PASSWORD_BCRYPT));
 
+session_start();
+
 include_once ('init.php');
 
 $userLoadingYes = authGetUser();
