@@ -4,14 +4,10 @@
 	<?=$name?>
 </button>
 <div class="dropdown-menu">
-	<a class="dropdown-item" href="user/person.php?loginId=<?=$loginId?>">Моя страница</a>
+	<a class="dropdown-item" href="<?=BASE_URL?>person/<?=$loginId?>">Моя страница</a>
 	<div class="dropdown-divider"></div>
-	<a class="dropdown-item" href="user/state.php?loginId=<?=$loginId?>&key=new">Добавить статью</a>
-	<a class="dropdown-item" href="user/listMyStates.php?loginId=<?=$loginId?>">Список статей</a>
+	<a class="dropdown-item" href="<?=BASE_URL?>state/<?=$loginId?>&key=new">Добавить статью</a>
+	<a class="dropdown-item" href="<?=BASE_URL?>listMyStates/<?=$loginId?>">Список статей</a>
 	<div class="dropdown-divider"></div>
 	<form method="post"><input class="dropdown-item" type="submit" name="exit" value="Выйти"></form>
-</div>
-
-<div class="content">
-   <?=$content?>
 </div>

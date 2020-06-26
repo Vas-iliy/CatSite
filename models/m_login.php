@@ -18,7 +18,7 @@ function usersOne ($login) {
  * @return bool|mixed|PDOStatement
  */
 function usersById ($id) {
-    $sql = "SELECT id_login FROM registrations WHERE id_login = :id";
+    $sql = "SELECT id_login, login FROM registrations WHERE id_login = :id";
     $data = dbQuery($sql, ['id' => $id]);
     $data = $data->fetch();
     return $data;

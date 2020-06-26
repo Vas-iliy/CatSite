@@ -26,7 +26,8 @@ if (checkControllerName($cname) && file_exists($patch)) {
 $html = template('bace/v_main', [
 	'title' => $pageTitle,
 	'content' => $pageContent,
-	'header' => $header
+	'header' => $header,
+	'user' => $userLoadingYes
 ]);
 
 
