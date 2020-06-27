@@ -5,3 +5,5 @@ $pageTitle = 'Новая статья';
 $validate = state($id_login, null);
 $pageContent = template('v_newState', ['validate' => $validate]);
 
+$header = head($userLoadingYes);
+

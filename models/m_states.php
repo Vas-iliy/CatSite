@@ -52,7 +52,7 @@ function oldState ($id)
 {
 	$sql = "SELECT state_title, state_content, id_cat FROM states WHERE id_state = :id";
 	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
+	$data = $data->fetch();
 
 	return $data;
 }
