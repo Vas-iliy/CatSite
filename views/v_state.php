@@ -1,6 +1,6 @@
 
 <div class="d-flex flex-column mt-5 align-items-center">
-		<div class="card" style="width: 30rem;">
+		<div class="card">
 			<h5 class="card-header"><?=$state['state_title']?></h5>
 			<div class="card-body">
 				
@@ -9,7 +9,7 @@
 				<p class="card-text">Autor: <?=$state['login']?></p>
 				<hr>
 				<?if($user !== null):?>
-				<form action="post">
+				<form method="post">
 					<input type="text" name="login" required placeholder="login"><br>
 					<textarea name="comment" id="" cols="30" rows="10" placeholder="comment"></textarea><br>
 					<input type="submit"><br>

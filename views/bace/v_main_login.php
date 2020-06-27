@@ -6,7 +6,7 @@
 <div class="dropdown-menu">
 	<a class="dropdown-item" href="<?=BASE_URL?>person/<?=$loginId?>">Моя страница</a>
 	<div class="dropdown-divider"></div>
-	<a class="dropdown-item" href="<?=BASE_URL?>state/<?=$loginId?>&key=new">Добавить статью</a>
+	<a class="dropdown-item" href="<?=BASE_URL?>newState/<?=$loginId?>">Добавить статью</a>
 	<a class="dropdown-item" href="<?=BASE_URL?>listMyStates/<?=$loginId?>">Список статей</a>
 	<div class="dropdown-divider"></div>
 	<form method="post"><input class="dropdown-item" type="submit" name="exit" value="Выйти"></form>
