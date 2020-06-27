@@ -29,6 +29,16 @@ function stateInsert ($params)
 	return true;
 }
 
+function stateIdSelect ($id)
+{
+	$sql = "SELECT state_title, state_content, id_state FROM states JOIN registrations USING (id_login)
+			WHERE id_login = :id";
+	$data = dbQuery($sql, ['id' => $id]);
+	$data = $data->fetchAll();
+
+	return $data;
+}
+
 function validate (&$params) {
 	$errors =[];
 	if (mb_strlen($params['state_title'], 'UTF-8') < 10) {
