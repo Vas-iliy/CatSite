@@ -29,8 +29,17 @@ function catInsert ($title)
 
 function oneCat ($title)
 {
-	$sql = "SELECT id_cat FROM cats WHERE cat_title = :cat_title";
+	$sql = "SELECT * FROM cats WHERE cat_title = :cat_title";
 	$data = dbQuery($sql, ['cat_title' => $title]);
+	$data = $data->fetch();
+
+	return $data;
+}
+
+function oldCat ($id)
+{
+	$sql = "SELECT * FROM cats WHERE id_cat = :id";
+	$data = dbQuery($sql, ['id' => $id]);
 	$data = $data->fetch();
 
 	return $data;
