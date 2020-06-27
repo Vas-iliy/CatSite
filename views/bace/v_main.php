@@ -14,7 +14,7 @@
 	<hr>
 	<ul class="nav justify-content-around align-items-center"> <!--bootstrap flex-->
 		<li class="nav-item text-center">
-            <a href="<? if($user === null) {echo BASE_URL;} else {echo BASE_URL . 'stateLog';}?>">
+            <a href="<?=BASE_URL?>">
                 <img src="https://img.icons8.com/fluent/48/000000/cat.png"/>
                 <h3 style="color: black" class="h3">All about cats</h3>
             </a>

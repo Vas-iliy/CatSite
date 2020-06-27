@@ -6,7 +6,6 @@
 		Войти
 	</button>
 	<form class="dropdown-menu p-4" method="post">
-		<label for="exampleDropdownFormEmail2"><?=$mail?></label>
 		<div class="form-group ">
 			<label for="exampleDropdownFormEmail2">Login or email</label>
 			<input type="text" class="form-control" id="exampleDropdownFormEmail2" name="login" required>
