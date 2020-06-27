@@ -30,6 +30,4 @@ $html = template('bace/v_main', [
 	'user' => $userLoadingYes
 ]);
 
-
-
 echo $html;

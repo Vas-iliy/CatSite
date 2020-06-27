@@ -1,4 +1,21 @@
 <?php
+
+function check ()
+{
+	if (URL_PARAMS[1] != '') {
+		header('Location:' . BASE_URL . URL_PARAMS[0] . '/' . URL_PARAMS[1] );
+	}
+
+	elseif (URL_PARAMS[0] != '') {
+		header('Location:' . BASE_URL . URL_PARAMS[0] . '/' . URL_PARAMS[1] );
+	}
+
+	else {
+		header('Location:' . BASE_URL);
+	}
+}
+
+
 function login ()
 {
 	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -18,11 +35,13 @@ function login ()
 					sessionAdd($params);
 
 					$_SESSION['token'] = $token;
+
 					if ($remember) {
 						setcookie('token', $token, time() + 3600 * 24 * 30, BASE_URL);
 					}
 
-					header('Location:' . BASE_URL );
+					check();
+
 					exit();
 				}
 			}
@@ -35,7 +54,7 @@ function login ()
 	}
 }
 
-function twoHead ()
+function head ()
 {
 	$authArr = false;
 	$userLoadingYes = authGetUser();
@@ -50,7 +69,7 @@ function twoHead ()
 
 		if ($_POST['exit']) {
 			session_destroy();
-			header('Location:' . BASE_URL);
+			check();
 		}
 	}
 	return $header;
