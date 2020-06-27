@@ -54,10 +54,9 @@ function login ()
 	}
 }
 
-function head ()
+function head ($userLoadingYes)
 {
 	$authArr = false;
-	$userLoadingYes = authGetUser();
 	if ($userLoadingYes === null) {
 		login();
 		$header = template('bace/v_main_no_login', ['authArr' => $authArr]);
@@ -69,6 +68,7 @@ function head ()
 
 		if ($_POST['exit']) {
 			session_destroy();
+			dtSession($userLoadingYes['id_login']);
 			check();
 		}
 	}

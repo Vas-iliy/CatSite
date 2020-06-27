@@ -7,6 +7,7 @@
 function sessionAdd ($params) {
     $sql = "INSERT INTO sessions (id_login, token) VALUES (:id, :token)";
     dbQuery($sql, $params);
+
     return true;
 }
 
@@ -19,5 +20,23 @@ function sessionOne ($token) {
     $sql = "SELECT id_login FROM sessions WHERE token = :token";
     $data = dbQuery($sql, ['token' => $token]);
     $data = $data->fetch();
+
     return $data;
+}
+
+function dtSession ($id)
+{
+	$sql = "UPDATE sessions SET dtNew = current_timestamp WHERE id_login = :id ";
+	dbQuery($sql, ['id' => $id]);
+
+	return true;
+}
+
+function sessionSelect ($id)
+{
+	$sql = "SELECT dt, dtNew FROM sessions WHERE id_login = :id ORDER BY id_sessions DESC ";
+	$data = dbQuery($sql, ['id' => $id]);
+	$data = $data->fetch();
+
+	return $data;
 }

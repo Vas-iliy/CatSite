@@ -8,19 +8,23 @@
 				<hr>
 				<p class="card-text">Autor: <?=$state['login']?></p>
 				<hr>
-				<?if($user !== null):?>
+			</div>
+            <div class="card-footer">
+	            <?if($user !== null):?>
+                    <?if($arr != '' ):?>
+                        <h2 style="color: red">Введите свой логин</h2>
+                    <?endif;?>
                     <form method="post">
                         <input type="text" name="login" required placeholder="login"><br>
                         <textarea name="comment" id="" cols="30" rows="10" placeholder="comment"></textarea><br>
                         <input type="submit"><br>
                     </form>
                     <hr>
-				<?endif;?>
-			</div>
-            <div class="card-footer">
+	            <?endif;?>
                 <div class="comments">
                     <h3 class="title-comments">Комментарии</h3>
                     <ul class="media-list">
+	                    <?foreach ($comments as $comment):?>
                         <li class="media">
                             <div class="media-left">
                                 <a href="#">
@@ -29,21 +33,17 @@
                             </div>
                             <div class="media-body">
                                 <div class="media-heading">
-                                    <div class="author">Дима</div>
+                                    <div class="author"><?=$comment['login']?></div>
                                     <div class="metadata">
-                                        <span class="date">16 ноября 2015, 13:43</span>
+                                        <span class="date"><?=$comment['comment_time']?></span>
                                     </div>
                                 </div>
                                 <div class="media-text text-justify">
-                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                                    Asperiores dicta doloremque et explicabo, facere minus nisi
-                                    nostrum numquam ratione tempora! Aspernatur atque dignissimos
-                                    exercitationem expedita fugiat fugit hic laborum maxime molestiae
-                                    odit optio placeat provident, quod sunt, tempora totam voluptatum.
-                                    Consequatur culpa fuga nostrum quaerat quidem quod rerum, tempore vero.
+                                    <?=$comment['comment']?>
                                 </div>
                             </div>
                         </li>
+                        <?endforeach;?>
                     </ul>
             </div>
 		</div>

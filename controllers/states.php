@@ -11,4 +11,4 @@ $pageContent = template('bace/v_main2c', [
 	'content' => $content
 ]);
 
-$header = head();
+$header = head($userLoadingYes);

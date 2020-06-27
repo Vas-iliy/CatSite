@@ -33,3 +33,22 @@ function state ($id_login, $id_state)
 	}
 	return $validate;
 }
+
+function comments ($id_state)
+{
+	if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+		$params   = extractFields( $_POST, [ 'login', 'comment' ] );
+		$login = searchLogin($params['login']);
+		$user = sessionSelect($login['id_login']);
+		if ($login['id_login'] && $user['dt'] == $user['dtNew']) {
+			unset($params['login']);
+			$params['id_login'] = $login['id_login'];
+			$params['id_state'] = $id_state;
+			commentInsert($params);
+		} else {
+			$arr = 'no';
+		}
+
+		return $arr;
+	}
+}
