@@ -6,7 +6,7 @@ $cats = catsSelect();
 
 
 $content = template('v_states', ['states' => $states]);
-$sidebar = template('v_cats', ['cats' => $cats]);
+$sidebar = template('v_cats_left', ['cats' => $cats]);
 $pageContent = template('bace/v_main2c', [
 	'left' => $sidebar,
 	'content' => $content
