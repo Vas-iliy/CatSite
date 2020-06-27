@@ -1,5 +1,5 @@
 <?php
-$id_login = URL_PARAMS[1];
+$id_login = $userLoadingYes['id_login'];
 $pageTitle = 'Мои статьи';
 $states = stateIdSelect($id_login);
 $cats = catsSelect();
