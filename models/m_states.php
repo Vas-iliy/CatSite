@@ -9,3 +9,13 @@ function stateSelect ()
 
 	return $data;
 }
+
+function oneState ($id)
+{
+	$sql = "SELECT state_title, state_content, login FROM states JOIN registrations USING (id_login)
+			WHERE id_state = :id";
+	$data = dbQuery($sql, ['id' => $id]);
+	$data = $data->fetch();
+
+	return $data;
+}
