@@ -12,7 +12,12 @@ $information = information($id_person);
 if ($userLoadingYes['id_login'] == $id_person) {
 	$user = 'user';
 	if ($_POST['description']) {
-		header('Location:' . BASE_URL . 'person/' . $id_person);
+		$params['description'] = $_POST['description'];
+		$params['id'] = $id_person;
+		$inform = updateInformation($params);
+		if ($inform) {
+			header('Location:' . BASE_URL . 'person/' . $id_person);
+		}
 	}
 
 	if ($_POST['file']) {

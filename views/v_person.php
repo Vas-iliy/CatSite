@@ -1,36 +1,35 @@
 
-<div class="d-flex flex-column mt-5 align-items-center">
-	<div class="card">
+	<div class="card" style="width: 50rem">
 		<div class="card-header">
 			<div class="row">
 				<?foreach ($person as $p):?>
-				<div class="col col-12 col-md-4">
-					<img src="<?=$p['img']?>" width="200px" alt="">
-					<?if($user !== ''):?>
-                        <form method="post" enctype="multipart/form-data">
-                            <input type="file">
-                            <input type="submit" name="file">
-                        </form>
-					<?endif;?>
-				</div>
-				<div class="col col-12 col-md-8">
-                    <h2><?=$p['login']?></h2>
-                    <hr>
-                    <?if($user !== ''):?>
-                        <form method="post">
-                            <textarea name="description" cols="30" rows="10">
-                                <?=$person['description']?>
-                            </textarea>
-                            <input type="submit">
-                        </form>
-                    <?else:?>
-                        <p><?=$p['description']?></p>
-                    <?endif;?>
-				</div>
+                    <div class="col col-12 col-md-4">
+                        <img src="<?=$p['img']?>" width="200px" alt="">
+                        <?if($user !== ''):?>
+                            <form method="post" enctype="multipart/form-data">
+                                <input type="file">
+                                <input type="submit" name="file">
+                            </form>
+                        <?endif;?>
+                    </div>
+                    <div class="col col-12 col-md-8">
+                        <h2><?=$p['login']?></h2>
+                        <hr>
+                        <?if($user !== ''):?>
+                            <form method="post">
+                                <textarea name="description" cols="30" rows="5"><?=$p['description']?></textarea>
+                                <br>
+                                <input type="submit">
+                            </form>
+                        <?else:?>
+                            <p><?=$p['description']?></p>
+                        <?endif;?>
+                    </div>
 				<?endforeach;?>
 			</div>
 		</div>
 		<div class="card-body">
+            <?if($informations !== null):?>
 			<?foreach ($informations as $information):?>
 			<table>
 				<tr>
@@ -41,6 +40,7 @@
 				</tr>
 			</table>
 			<?endforeach;?>
+            <?endif;?>
 		</div>
         <?if($user === ''):?>
             <div class="card-footer">
@@ -71,4 +71,3 @@
                 </div>
             </div>
         <?endif;?>
-	</div>
