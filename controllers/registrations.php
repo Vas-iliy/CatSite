@@ -31,8 +31,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 if ($_GET['auth']) {
     $auth = $_GET['auth'];
     userUpdate($auth);
-    $mail = 'Ваша почта подтверждена';
-    $alert = 'alert-success';
+    $login = userSelectLogin()['login'];
+    mkdir("people/$login");
+    mkdir("people/$login/head");
+    header('Location:' . BASE_URL);
 }
 
 $pageTitle = 'Регистрация';

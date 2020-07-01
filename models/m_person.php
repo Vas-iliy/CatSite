@@ -36,3 +36,12 @@ function updateInformation ($params)
 	return true;
 }
 
+function updateImg ($params)
+{
+	$sql = "UPDATE registrations SET img = :img WHERE id_login = :id";
+	dbQuery($sql, $params);
+
+	return true;
+}
+
+

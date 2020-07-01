@@ -32,3 +32,11 @@ function userUpdate ($auth) {
 
     return true;
 }
+
+function userSelectLogin () {
+	$sql = "SELECT login FROM registrations ORDER BY id_login DESC ";
+	$data = dbQuery($sql, null);
+	$data = $data->fetch();
+
+	return $data;
+}
