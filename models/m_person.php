@@ -28,3 +28,11 @@ function information ($id)
 	return $data;
 }
 
+function updateInformation ($params)
+{
+	$sql = "UPDATE person SET description = :description WHERE id_login = :id";
+	dbQuery($sql, $params);
+
+	return true;
+}
+
