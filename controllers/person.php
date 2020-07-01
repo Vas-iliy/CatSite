@@ -8,10 +8,16 @@ $pageTitle = $person['login'];
 $reviews = reviews($id_person);
 $information = information($id_person);
 
-$pageContent = template('v_person', [
-	'person' => $person,
-	'informations' => $information,
-	'reviews' => $reviews
-]);
+if ($userLoadingYes['id_login'] == $id_person) {
+
+} else {
+	$pageContent = template('v_person', [
+		'person' => $person,
+		'informations' => $information,
+		'reviews' => $reviews
+	]);
+}
 
 $header = head($userLoadingYes);
+
+
