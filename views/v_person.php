@@ -5,7 +5,7 @@
 			<div class="row">
 				<?foreach ($person as $p):?>
 				<div class="col col-12 col-md-4">
-					<img src="<?=$p['img']?>" width="50px" alt="">
+					<img src="<?=$p['img']?>" width="200px" alt="">
 				</div>
 				<div class="col col-12 col-md-8">
 						<h2><?=$p['login']?></h2>

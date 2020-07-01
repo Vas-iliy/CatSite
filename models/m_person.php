@@ -11,7 +11,7 @@ function reviews ($id)
 
 function person ($id)
 {
-	$sql = "SELECT * FROM person WHERE id_login = :id";
+	$sql = "SELECT description, img, login FROM person JOIN registrations USING (id_login) WHERE id_login = :id";
 	$data = dbQuery($sql, ['id' => $id]);
 	$data = $data->fetch();
 

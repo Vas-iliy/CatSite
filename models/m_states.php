@@ -40,7 +40,7 @@ function stateUpdate ($params)
 
 function stateIdSelect ($id)
 {
-	$sql = "SELECT state_title, state_content, id_state FROM states JOIN registrations USING (id_login)
+	$sql = "SELECT state_title, state_content, id_state, id_login FROM states JOIN registrations USING (id_login)
 			WHERE id_login = :id";
 	$data = dbQuery($sql, ['id' => $id]);
 	$data = $data->fetchAll();
