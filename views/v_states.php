@@ -6,7 +6,7 @@
 		<div class="card-body">
 			<h5 class="card-content"><?=mb_strimwidth($state['state_content'], 0, 350, '...')?></h5>
             <?if($user == null):?>
-                <a href="<?=BASE_URL?>person<?=$state['id_login']?>"><p class="card-text">Autor:<?=$state['login']?></p></a>
+                <a href="<?=BASE_URL?>person/<?=$state['id_login']?>"><p class="card-text">Autor:<?=$state['login']?></p></a>
                 <div class="card-footer text-right">
                     <a  href="<?=BASE_URL?>state/<?=$state['id_state']?>" class="btn btn-primary">Узнать больше</a>
                 </div>

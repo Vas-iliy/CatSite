@@ -58,11 +58,11 @@
                                     <div class="media-heading">
                                         <div class="author"><?=$review['login']?></div>
                                         <div class="metadata">
-                                            <span class="date"><?=$review['dt']?></span>
+                                            <span class="date"><?=$review['dt_review']?></span>
                                         </div>
                                     </div>
                                     <div class="media-text text-justify">
-                                        <?=$comment['review']?>
+                                        <?=$review['review']?>
                                     </div>
                                 </div>
                             </li>

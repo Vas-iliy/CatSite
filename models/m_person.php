@@ -1,14 +1,5 @@
 <?php
 
-function reviews ($id)
-{
-	$sql = "SELECT * FROM reviews WHERE id_login = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
-
-	return $data;
-}
-
 function person ($id)
 {
 	$sql = "SELECT description, img, login FROM registrations WHERE id_login = :id";
@@ -42,6 +33,16 @@ function updateImg ($params)
 	dbQuery($sql, $params);
 
 	return true;
+}
+
+function reviews ($id)
+{
+	$sql = "SELECT review, login, dt_review FROM reviews JOIN registrations USING (id_login) 
+			WHERE id_person = :id";
+	$data = dbQuery($sql, ['id' => $id]);
+	$data = $data->fetchAll();
+
+	return $data;
 }
 
 

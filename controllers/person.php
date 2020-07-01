@@ -5,7 +5,6 @@ $user = '';
 $person = person($id_person);
 
 $pageTitle = $person['login'];
-
 $reviews = reviews($id_person);
 $information = information($id_person);
 
