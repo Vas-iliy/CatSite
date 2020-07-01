@@ -15,3 +15,4 @@ include_once ('models/m_login.php');
 include_once ('models/m_registrations.php');
 include_once ('models/m_sissions.php');
 include_once ('models/m_comments.php');
+include_once ('models/m_person.php');
