@@ -1,7 +1,7 @@
 
 <div class="d-flex flex-column mt-5 align-items-center">
 <?foreach ($states as $state):?>
-	<div class="card">
+	<div class="card" style="width: 30rem">
 		<h5 class="card-header"><?=$state['state_title']?></h5>
 		<div class="card-body">
 			<h5 class="card-content"><?=mb_strimwidth($state['state_content'], 0, 350, '...')?></h5>
