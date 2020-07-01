@@ -9,16 +9,6 @@ function person ($id)
 	return $data;
 }
 
-function information ($id)
-{
-	$sql = "SELECT state_title, comment, review FROM registrations JOIN states USING (id_login) 
-			JOIN comment USING (id_login) JOIN reviews ON id_login = id_person WHERE id_login = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
-
-	return $data;
-}
-
 function updateInformation ($params)
 {
 	$sql = "UPDATE registrations SET description = :description WHERE id_login = :id";
@@ -39,6 +29,35 @@ function reviews ($id)
 {
 	$sql = "SELECT review, login, dt_review FROM reviews JOIN registrations USING (id_login) 
 			WHERE id_person = :id";
+	$data = dbQuery($sql, ['id' => $id]);
+	$data = $data->fetchAll();
+
+	return $data;
+}
+
+function informFromState ($id)
+{
+	$sql = "SELECT state_title FROM states JOIN reviews ON states.id_login = reviews.id_person 
+			WHERE id_person = :id";
+	$data = dbQuery($sql, ['id' => $id]);
+	$data = $data->fetchAll();
+
+	return $data;
+}
+
+function informFromComment ($id)
+{
+	$sql = "SELECT comment FROM comment JOIN reviews ON comment.id_login = reviews.id_person 
+			WHERE id_person = :id";
+	$data = dbQuery($sql, ['id' => $id]);
+	$data = $data->fetchAll();
+
+	return $data;
+}
+
+function informFromReview ($id)
+{
+	$sql = "SELECT review FROM reviews WHERE id_login = :id";
 	$data = dbQuery($sql, ['id' => $id]);
 	$data = $data->fetchAll();
 

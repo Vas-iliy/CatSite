@@ -29,18 +29,22 @@
 			</div>
 		</div>
 		<div class="card-body">
-            <?if($informations !== null):?>
-			<?foreach ($informations as $information):?>
-			<table>
-				<tr>
-					<td><?=$information['states']?></td><td><?=$information['comments']?></td><td><?=$information['reviews']?></td>
-				</tr>
-				<tr>
-					<td>Статьи</td><td>Комментарии</td><td>Отзывы</td>
-				</tr>
-			</table>
-			<?endforeach;?>
-            <?endif;?>
+            <table class="table">
+                <thead class="thead-light">
+                <tr>
+                    <th scope="col">Статьи</th>
+                    <th scope="col">Комментарии</th>
+                    <th scope="col">Отзывы</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td><?=$states?></td>
+                    <td><?=$comments?></td>
+                    <td><?=$review?></td>
+                </tr>
+                </tbody>
+            </table>
 		</div>
         <?if($user === ''):?>
             <div class="card-footer">
