@@ -7,8 +7,8 @@
                         <img src="<?=$p['img']?>" width="200px" alt="">
                         <?if($user !== ''):?>
                             <form method="post" enctype="multipart/form-data">
-                                <input type="file" name="file">
-                                <input type="submit">
+                                <input type="file" name="file" required>
+                                <input type="submit" name="go">
                             </form>
                         <?endif;?>
                     </div>

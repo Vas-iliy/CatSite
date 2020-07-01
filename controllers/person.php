@@ -10,6 +10,7 @@ $reviews = reviews($id_person);
 $information = information($id_person);
 
 if ($userLoadingYes['id_login'] == $id_person) {
+
 	$user = 'user';
 	if ($_POST['description']) {
 		$params['description'] = $_POST['description'];
@@ -20,7 +21,8 @@ if ($userLoadingYes['id_login'] == $id_person) {
 		}
 	}
 
-	if (isset($_POST['file'])) {
+	if (isset($_POST['go'])) {
+
 		$file = extractFields($_FILES['file'], ['name', 'type', 'tmp_name', 'error', 'size']);
 
 		$fileExtension = strtolower(end(explode('.', $file['name']))); //это массив, в котором будет [имя,расширение]
@@ -29,10 +31,10 @@ if ($userLoadingYes['id_login'] == $id_person) {
 		if (in_array($fileExtension, $allowedExtensions)) {
 			if ($file['size'] < 5000000) {
 				if ($file['error'] == 0) {
-					$params['img'] = $file['name'];
+					$params['img'] = '/people/' . $userLoadingYes['login'] . '/head/' . $file['name'];
 					$params['id'] = $id_person;
 					updateImg($params);
-					$fileDestination = 'people/' . $userLoadingYes['login'] . '/head/' . $file['name'];
+					$fileDestination = 'people/' . $userLoadingYes['login'] . '/head/' . $file['name'] ;
 					move_uploaded_file($file['tmp_name'], $fileDestination);
 
 				} else {
@@ -45,6 +47,9 @@ if ($userLoadingYes['id_login'] == $id_person) {
 		} else {
 			echo 'Неверный тип файла';
 		}
+	}
+	if ($fileDestination) {
+		header('Location:' . BASE_URL . 'person/' . $id_person);
 	}
 }
 
