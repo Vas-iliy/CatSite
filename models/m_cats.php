@@ -2,11 +2,7 @@
 
 function catsSelect ()
 {
-	$sql = "SELECT * FROM cats WHERE cat_moderation = :m ORDER BY id_cat";
-	$data = dbQuery($sql, ['m' => 1]);
-	$data = $data->fetchAll();
-
-	return $data;
+	return select(['*'], 'cats', ['cat_moderation' => 1], null, [], 'id_cat');
 }
 
 function states_cat_login_select ($id)
@@ -29,18 +25,10 @@ function catInsert ($title)
 
 function oneCat ($title)
 {
-	$sql = "SELECT * FROM cats WHERE cat_title = :cat_title";
-	$data = dbQuery($sql, ['cat_title' => $title]);
-	$data = $data->fetch();
-
-	return $data;
+	return select(['*'], 'cats', ['cat_title' => ''], $title, [], null, '');
 }
 
 function oldCat ($id)
 {
-	$sql = "SELECT * FROM cats WHERE id_cat = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetch();
-
-	return $data;
+	return select(['*'], 'cats', ['id_cat' => ''], $id, [], null, '');
 }

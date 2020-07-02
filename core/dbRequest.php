@@ -23,11 +23,11 @@ function select ($columns, $table,  $where , $value = null, $join = [], $dt = nu
 		}
 
 		$whereValue = $where[$whereKey[0]];
-		$sql = "SELECT $columns FROM $table $joinn $order WHERE $whereKey[0] = :val1 AND $whereKey[1] = :val2";
+		$sql = "SELECT $columns FROM $table $joinn  WHERE $whereKey[0] = :val1 AND $whereKey[1] = :val2 $order";
 		$data = dbQuery($sql, ['val1' => $whereValue, 'val2' => $value]);
 	} else {
 
-			$sql = "SELECT $columns FROM $table $joinn $order WHERE $whereKey = :val ";
+			$sql = "SELECT $columns FROM $table $joinn WHERE $whereKey = :val $order";
 
 		if ($whereValue === '') {
 			$data = dbQuery($sql, ['val' => $value]);
