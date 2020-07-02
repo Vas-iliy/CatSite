@@ -3,8 +3,8 @@
 function stateSelect ()
 {
 	$sql = "SELECT state_title, state_content, login, id_login, id_state FROM states JOIN registrations USING (id_login)
-			WHERE state_moderation = 1";
-	$data = dbQuery($sql, null);
+			WHERE state_moderation = :m";
+	$data = dbQuery($sql, ['m' => 1]);
 	$data = $data->fetchAll();
 
 	return $data;

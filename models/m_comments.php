@@ -3,8 +3,8 @@
 function commentSelect ($id)
 {
 	$sql ="SELECT comment, login, comment_time FROM comment JOIN registrations 
-			USING (id_login) WHERE id_state = :id AND comment_moderation = 1";
-	$data = dbQuery($sql, ['id' => $id]);
+			USING (id_login) WHERE id_state = :id AND comment_moderation = :m";
+	$data = dbQuery($sql, ['id' => $id, 'm' => 1]);
 	$data = $data->fetchAll();
 
 	return $data;
