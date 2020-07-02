@@ -8,11 +8,8 @@ function userSelect ($email) {
 	return select(['validations'], 'registrations', ['email' => ''], $email, [], null, '');
 }
 
-function userUpdate ($auth) {
-    $sql = "UPDATE registrations SET validations = 1, dtNew=current_timestamp WHERE authKey = :auth";
-    dbQuery($sql, ['auth' => $auth]);
-
-    return true;
+function userUpdate ($params) {
+	return update('registrations', ['validations'],'authKey', $params, 'aaa');
 }
 
 function userSelectLogin () {

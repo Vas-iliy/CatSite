@@ -68,7 +68,8 @@ function head ($userLoadingYes)
 
 		if ($_POST['exit']) {
 			session_destroy();
-			dtSession($userLoadingYes['id_login']);
+			$params['id'] = $userLoadingYes['id_login'];
+			dtSession($params);
 			check();
 		}
 	}

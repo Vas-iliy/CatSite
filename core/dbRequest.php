@@ -81,7 +81,7 @@ function insert ($table, $columns, $params, $values = null)
 	return true;
 }
 
-function update ($table, $columns, $where, $params = null, $value = null)
+function update ($table, $columns, $where, $params, $dt = '')
 {
 	$column = $columns;
 	for ($i = 0; $i<count($columns); $i++) {
@@ -95,11 +95,12 @@ function update ($table, $columns, $where, $params = null, $value = null)
 
 	$sql = "UPDATE $table SET $column WHERE $where = :id";
 
-	if ($params === null) {
-		dbQuery($sql, ['id' => $value]);
-	} else {
-		dbQuery($sql, $params);
+	if ($dt !== '') {
+		$sql = "UPDATE $table SET $column, dtNew=current_timestamp WHERE $where = :id";
 	}
+
+	dbQuery($sql, $params);
+
 
 	return true;
 }

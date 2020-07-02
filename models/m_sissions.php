@@ -17,12 +17,9 @@ function sessionOne ($token) {
 	return select(['id_login'], 'sessions', ['token' => ''], $token, [], null, '');
 }
 
-function dtSession ($id)
+function dtSession ($params)
 {
-	$sql = "UPDATE sessions SET dtNew = current_timestamp WHERE id_login = :id ";
-	dbQuery($sql, ['id' => $id]);
-
-	return true;
+	return update('sessions', [],'id_login', $params, 'aaa');
 }
 
 function sessionSelect ($id)

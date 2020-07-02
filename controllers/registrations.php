@@ -29,8 +29,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 if ($_GET['auth']) {
-    $auth = $_GET['auth'];
-    userUpdate($auth);
+    $params['id'] = $_GET['auth'];
+    $params['validations'] = 1;
+    userUpdate($params);
     $login = userSelectLogin()['login'];
     mkdir("people/$login");
     mkdir("people/$login/head");
