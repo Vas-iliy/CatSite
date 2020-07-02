@@ -27,9 +27,5 @@ function dtSession ($id)
 
 function sessionSelect ($id)
 {
-	$sql = "SELECT dt, dtNew FROM sessions WHERE id_login = :id ORDER BY id_sessions DESC ";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetch();
-
-	return $data;
+	return select(['dt', 'dtNew'], 'sessions', ['id_login' => ''], $id, [], 'id_sessions', '', [], 'DESC');
 }

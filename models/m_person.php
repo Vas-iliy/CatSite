@@ -29,22 +29,14 @@ function reviews ($id)
 
 function informFromState ($id)
 {
-	$sql = "SELECT state_title FROM states JOIN reviews ON states.id_login = reviews.id_person 
-			WHERE id_person = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
-
-	return $data;
+	return select(['state_title'], 'states', ['id_person' => ''], $id,
+		['reviews' => ''], null, 'all', ['id_login', 'id_person']);
 }
 
 function informFromComment ($id)
 {
-	$sql = "SELECT comment FROM comment JOIN reviews ON comment.id_login = reviews.id_person 
-			WHERE id_person = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
-
-	return $data;
+	return select(['comment'], 'comment', ['id_person' => ''], $id,
+		['reviews' => ''], null, 'all', ['id_login', 'id_person']);
 }
 
 function informFromReview ($id)
