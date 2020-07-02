@@ -73,5 +73,11 @@
                         <?endforeach;?>
                     </ul>
                 </div>
+	            <?if($userLoadingYes !== null):?>
+                    <form method="post">
+                        <textarea name="review" id="" cols="30" rows="10" placeholder="Отзыв"></textarea><br>
+                        <input type="submit"><br>
+                    </form>
+                <?endif;?>
             </div>
         <?endif;?>

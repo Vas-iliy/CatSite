@@ -56,10 +56,20 @@ $pageContent = template('v_person', [
 	'comments' => count(informFromComment($id_person)),
 	'review' => count(informFromReview($id_person)),
 	'reviews' => $reviews,
-	'user' => $user
+	'user' => $user,
+	'userLoadingYes' => $userLoadingYes['id_login']
 ]);
 
 
 $header = head($userLoadingYes);
+
+if ($_POST['review']) {
+	$param = extractFields($_POST, ['review']);
+	$param['id_login'] = $userLoadingYes['id_login'];
+	$param['id_person'] = $id_person;
+
+	insertReview($param);
+
+}
 
 
