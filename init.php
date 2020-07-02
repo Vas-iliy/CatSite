@@ -8,6 +8,7 @@ include_once ('core/auth.php');
 include_once ('core/system.php');
 include_once( 'core/head.php' );
 include_once( 'core/jobIsState.php' );
+include_once ('core/dbRequest.php');
 
 include_once ('models/m_states.php');
 include_once ('models/m_cats.php');
