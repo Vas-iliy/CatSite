@@ -14,11 +14,7 @@ function oneState ($id)
 
 function stateInsert ($params)
 {
-	$sql = "INSERT INTO states (state_title, state_content, id_cat, id_login) VALUES 
-			(:state_title, :state_content, :id_cat,  :id_login)";
-	dbQuery($sql, $params);
-
-	return true;
+	return insert('states', ['state_title', 'state_content', 'id_cat', 'id_login'], $params);
 }
 
 function stateUpdate ($params)

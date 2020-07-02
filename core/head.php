@@ -29,7 +29,7 @@ function login ()
 				if ($user !== null && password_verify($login['password'], $user['password'])) {
 					$token = substr(bin2hex(random_bytes(128)), 0, 128);
 					$params = [
-						'id' => $user['id_login'],
+						'id_login' => $user['id_login'],
 						'token' => $token
 					];
 					sessionAdd($params);

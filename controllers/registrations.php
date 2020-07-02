@@ -9,7 +9,7 @@ $alert = '';
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $params = extractFields($_POST, ['login', 'password', 'email']);
     $params['password'] = password_hash($params['password'], PASSWORD_BCRYPT);
-    $params['auth'] = $authKye;
+    $params['authKey'] = $authKye;
     $person = userInsert($params);
 
     if ($person) {

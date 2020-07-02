@@ -43,5 +43,24 @@ function select ($columns, $table,  $where , $value = null, $join = [], $dt = nu
 	}
 
 	return $data;
+}
 
+function insert ($table, $columns, $params, $values = null)
+{
+	$column = implode(",", $columns);
+	for ($i = 0; $i<count($columns); $i++) {
+		$columns[$i] = ':' . $columns[$i];
+		next($columns);
+	}
+	$columns = implode(",", $columns);
+
+	$sql = "INSERT INTO $table ($column) VALUES ($columns) ";
+
+	if ($values !== null) {
+		dbQuery($sql, [$column => $values]);
+	} else {
+		dbQuery($sql, $params);
+	}
+
+	return true;
 }

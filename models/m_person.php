@@ -54,9 +54,6 @@ function informFromReview ($id)
 
 function insertReview ($params)
 {
-	$sql = "INSERT INTO reviews (id_login, id_person, review) VALUES (:id_login, :id_person, :review)";
-	dbQuery($sql, $params);
-
-	return true;
+	return insert('reviews', ['id_login', 'id_person', 'review'], $params);
 }
 

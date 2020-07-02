@@ -8,8 +8,5 @@ function commentSelect ($id)
 
 function commentInsert ($params)
 {
-	$sql = "INSERT INTO comment (id_login, id_state, comment) VALUES (:id_login, :id_state, :comment)";
-	dbQuery($sql, $params);
-
-	return true;
+	return insert('comment', ['id_login', 'id_state', 'comment'], $params);
 }

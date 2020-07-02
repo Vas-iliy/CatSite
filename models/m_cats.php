@@ -17,10 +17,7 @@ function states_cat_login_select ($id)
 
 function catInsert ($title)
 {
-	$sql = "INSERT INTO cats (cat_title) VALUE (:cat_title) ";
-	dbQuery($sql, ['cat_title' => $title]);
-
-	return true;
+	return insert('cats', ['cat_title'], null, $title);
 }
 
 function oneCat ($title)
