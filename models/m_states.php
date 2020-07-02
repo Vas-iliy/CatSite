@@ -19,11 +19,7 @@ function stateInsert ($params)
 
 function stateUpdate ($params)
 {
-	$sql = "UPDATE states SET state_title = :state_title, state_content = :state_content, 
-			id_cat = :id_cat, id_login = :id_login WHERE id_state = :id";
-	dbQuery($sql, $params);
-
-	return true;
+	return update('states', ['state_title', 'state_content', 'id_cat', 'id_login', 'state_moderation'],'id_state', $params);
 }
 
 function stateIdSelect ($id)

@@ -20,6 +20,7 @@ function state ($id_login, $id_state)
 			$state = stateInsert( $params );
 		} else {
 			$params['id'] = $id_state;
+			$params['state_moderation'] = 0;
 			$state = stateUpdate( $params );
 		}
 

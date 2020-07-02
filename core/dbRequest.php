@@ -67,7 +67,6 @@ function insert ($table, $columns, $params, $values = null)
 	$column = implode(",", $columns);
 	for ($i = 0; $i<count($columns); $i++) {
 		$columns[$i] = ':' . $columns[$i];
-		next($columns);
 	}
 	$columns = implode(",", $columns);
 
@@ -75,6 +74,29 @@ function insert ($table, $columns, $params, $values = null)
 
 	if ($values !== null) {
 		dbQuery($sql, [$column => $values]);
+	} else {
+		dbQuery($sql, $params);
+	}
+
+	return true;
+}
+
+function update ($table, $columns, $where, $params = null, $value = null)
+{
+	$column = $columns;
+	for ($i = 0; $i<count($columns); $i++) {
+		$columns[$i] = ':' . $columns[$i];
+	}
+
+	for ($i = 0; $i < count($column); $i++) {
+		$column[$i] = $column[$i] . ' = ' . $columns[$i];
+	}
+	$column = implode(",", $column);
+
+	$sql = "UPDATE $table SET $column WHERE $where = :id";
+
+	if ($params === null) {
+		dbQuery($sql, ['id' => $value]);
 	} else {
 		dbQuery($sql, $params);
 	}

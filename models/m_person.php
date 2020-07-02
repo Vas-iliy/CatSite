@@ -7,18 +7,12 @@ function person ($id)
 
 function updateInformation ($params)
 {
-	$sql = "UPDATE registrations SET description = :description WHERE id_login = :id";
-	dbQuery($sql, $params);
-
-	return true;
+	return update('registrations', ['description'],'id_login', $params);
 }
 
 function updateImg ($params)
 {
-	$sql = "UPDATE registrations SET img = :img WHERE id_login = :id";
-	dbQuery($sql, $params);
-
-	return true;
+	return update('registrations', ['img'],'id_login', $params);
 }
 
 function reviews ($id)
