@@ -18,12 +18,12 @@ function select ($columns, $table,  $where , $value = null, $join = [], $dt = nu
 	$whereKey = key($where); $whereValue = $where[$whereKey];
 	if ($whereValue !== '' && $value !== null) {
 		for ($i = 0; $i < 2 ; $i++) {
-			$whereKey[] = key($where);
+			$whereK[] = key($where);
 			next($where);
 		}
 
-		$whereValue = $where[$whereKey[0]];
-		$sql = "SELECT $columns FROM $table $joinn  WHERE $whereKey[0] = :val1 AND $whereKey[1] = :val2 $order";
+		$whereValue = $where[$whereK[0]];
+		$sql = "SELECT $columns FROM $table $joinn  WHERE $whereK[0] = :val1 AND $whereK[1] = :val2 $order";
 		$data = dbQuery($sql, ['val1' => $whereValue, 'val2' => $value]);
 	} else {
 

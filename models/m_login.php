@@ -6,10 +6,7 @@
  * @return bool|mixed|PDOStatement
  */
 function usersOne ($login) {
-    $sql = "SELECT id_login, password FROM registrations WHERE login = :login";
-    $data = dbQuery($sql, ['login' => $login]);
-    $data = $data->fetch();
-    return $data;
+	return select(['password', 'id_login'], 'registrations', ['login' => ''], $login, [], null, '');
 }
 
 /**
@@ -18,10 +15,7 @@ function usersOne ($login) {
  * @return bool|mixed|PDOStatement
  */
 function usersById ($id) {
-    $sql = "SELECT id_login, login FROM registrations WHERE id_login = :id";
-    $data = dbQuery($sql, ['id' => $id]);
-    $data = $data->fetch();
-    return $data;
+	return select(['id_login', 'login'], 'registrations', ['id_login' => ''], $id, [], null, '');
 }
 
 /**
@@ -30,9 +24,6 @@ function usersById ($id) {
  * @return bool|mixed|PDOStatement
  */
 function searchValidate ($login) {
-    $sql = "SELECT id_login FROM registrations WHERE login = :login AND validations = '1'";
-    $data = dbQuery($sql, ['login' => $login]);
-    $data = $data->fetch();
-    return $data;
+	return select(['id_login'], 'registrations', ['validations' => 1, 'login' => ''], $login, [], null, '');
 }
 
