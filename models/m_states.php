@@ -2,22 +2,14 @@
 
 function stateSelect ()
 {
-	$sql = "SELECT state_title, state_content, login, id_login, id_state FROM states JOIN registrations USING (id_login)
-			WHERE state_moderation = :m";
-	$data = dbQuery($sql, ['m' => 1]);
-	$data = $data->fetchAll();
-
-	return $data;
+	return select(['state_title', 'state_content', 'login', 'id_login', 'id_state'],
+		'states', ['state_moderation' => 1], null, ['registrations' => 'id_login']);
 }
 
 function oneState ($id)
 {
-	$sql = "SELECT state_title, state_content, login, id_login FROM states JOIN registrations USING (id_login)
-			WHERE id_state = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetch();
-
-	return $data;
+	return select(['state_title', 'state_content', 'login', 'id_login'],
+		'states', ['id_state' => ''], $id, ['registrations' => 'id_login'], null, '');
 }
 
 function stateInsert ($params)
@@ -40,21 +32,14 @@ function stateUpdate ($params)
 
 function stateIdSelect ($id)
 {
-	$sql = "SELECT state_title, state_content, id_state, id_login FROM states JOIN registrations USING (id_login)
-			WHERE id_login = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
-
-	return $data;
+	return select(['state_title', 'state_content', 'id_state', 'id_login'],
+		'states', ['id_login' => ''], $id, ['registrations' => 'id_login']);
 }
 
 function oldState ($id)
 {
-	$sql = "SELECT state_title, state_content, id_cat FROM states WHERE id_state = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetch();
-
-	return $data;
+	return select(['state_title', 'state_content', 'id_cat'],
+		'states', ['id_state' => ''], $id, [], null, '');
 }
 
 function validate (&$params) {
