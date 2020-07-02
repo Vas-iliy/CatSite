@@ -6,16 +6,12 @@
 				
 				<h5 class="card-content"><?=$state['state_content']?></h5>
 				<hr>
-				<p class="card-text">Autor: <?=$state['login']?></p>
+                <a href="<?=BASE_URL?>person/<?=$state['id_login']?>"><p class="card-text">Autor:<?=$state['login']?></p></a>
 				<hr>
 			</div>
             <div class="card-footer">
 	            <?if($user !== null):?>
-                    <?if($arr != '' ):?>
-                        <h2 style="color: red">Введите свой логин</h2>
-                    <?endif;?>
                     <form method="post">
-                        <input type="text" name="login" required placeholder="login"><br>
                         <textarea name="comment" id="" cols="30" rows="10" placeholder="comment"></textarea><br>
                         <input type="submit"><br>
                     </form>

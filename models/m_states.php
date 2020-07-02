@@ -2,7 +2,7 @@
 
 function stateSelect ()
 {
-	$sql = "SELECT state_title, state_content, login, id_login FROM states JOIN registrations USING (id_login)
+	$sql = "SELECT state_title, state_content, login, id_login, id_state FROM states JOIN registrations USING (id_login)
 			WHERE state_moderation = 1";
 	$data = dbQuery($sql, null);
 	$data = $data->fetchAll();
@@ -12,7 +12,7 @@ function stateSelect ()
 
 function oneState ($id)
 {
-	$sql = "SELECT state_title, state_content, login FROM states JOIN registrations USING (id_login)
+	$sql = "SELECT state_title, state_content, login, id_login FROM states JOIN registrations USING (id_login)
 			WHERE id_state = :id";
 	$data = dbQuery($sql, ['id' => $id]);
 	$data = $data->fetch();

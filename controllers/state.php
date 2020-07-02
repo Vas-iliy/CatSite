@@ -6,13 +6,12 @@ $pageTitle = 'Страница статьи';
 
 $comments = commentSelect($id_state);
 
-$arr = comments($id_state);
+comments($id_state, $userLoadingYes);
 
 $pageContent = template('v_state', [
 	'state' => $state,
 	'user' => $userLoadingYes,
 	'comments' => $comments,
-	'arr' => $arr
 ]);
 $header = head($userLoadingYes);
 

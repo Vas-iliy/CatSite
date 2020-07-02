@@ -17,12 +17,3 @@ function commentInsert ($params)
 
 	return true;
 }
-
-function searchLogin ($login)
-{
-	$sql = "SELECT id_login FROM registrations WHERE login = :login";
-	$data = dbQuery($sql, ['login' => $login]);
-	$data = $data->fetch();
-
-	return $data;
-}
