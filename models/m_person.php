@@ -2,11 +2,7 @@
 
 function person ($id)
 {
-	$sql = "SELECT description, img, login FROM registrations WHERE id_login = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
-
-	return $data;
+	return select(['description', 'img', 'login'], 'registrations', ['id_login' => ''], $id);
 }
 
 function updateInformation ($params)
@@ -27,12 +23,8 @@ function updateImg ($params)
 
 function reviews ($id)
 {
-	$sql = "SELECT review, login, dt_review FROM reviews JOIN registrations USING (id_login) 
-			WHERE id_person = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
-
-	return $data;
+	return select(['review', 'dt_review', 'login'],
+		'reviews', ['id_person' => ''], $id, ['registrations' => 'id_login']);
 }
 
 function informFromState ($id)
@@ -57,11 +49,8 @@ function informFromComment ($id)
 
 function informFromReview ($id)
 {
-	$sql = "SELECT review FROM reviews WHERE id_login = :id";
-	$data = dbQuery($sql, ['id' => $id]);
-	$data = $data->fetchAll();
+	return select(['review'], 'reviews', ['id_login' => ''], $id);
 
-	return $data;
 }
 
 

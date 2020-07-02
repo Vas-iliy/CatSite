@@ -17,11 +17,7 @@ function sessionAdd ($params) {
  * @return bool|mixed|PDOStatement
  */
 function sessionOne ($token) {
-    $sql = "SELECT id_login FROM sessions WHERE token = :token";
-    $data = dbQuery($sql, ['token' => $token]);
-    $data = $data->fetch();
-
-    return $data;
+	return select(['id_login'], 'sessions', ['token' => ''], $token, [], null, '');
 }
 
 function dtSession ($id)

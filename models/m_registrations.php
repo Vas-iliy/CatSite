@@ -19,11 +19,7 @@ function authKeyFunction () {
 }
 
 function userSelect ($email) {
-    $sql = "SELECT validations FROM registrations WHERE email = :email";
-    $data = dbQuery($sql, ['email' => $email]);
-    $data = $data->fetch();
-
-    return $data;
+	return select(['validations'], 'registrations', ['email' => ''], $email, [], null, '');
 }
 
 function userUpdate ($auth) {
